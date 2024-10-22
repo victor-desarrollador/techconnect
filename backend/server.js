@@ -1,12 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 
 // Middleware para parsear JSON
+app.use(cors());
 app.use(express.json());
 
-//Conexión 
+//Conexión
 mongoose.connect('mongodb://localhost:27017/techconnet')
 
 .then(() => {
